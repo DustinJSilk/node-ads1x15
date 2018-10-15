@@ -189,7 +189,7 @@ ads1x15.prototype.readADCSingleEnded = function(channel, pga, sps, callback) {
       }
     }
     // Set PGA/voltage range, defaults to +-6.144V
-    if (!(pgaADS1x15[pga]))
+    if (!(pgaADS1x15.hasOwnProperty(pga)))
     {
       self.busy = false;
       callback("ADS1x15: Invalid pga specified");
@@ -356,7 +356,7 @@ ads1x15.prototype.readADCDifferential = function(chP, chN, pga, sps, callback) {
       }
     }
     // Set PGA/voltage range, defaults to +-6.144V
-    if (!(pgaADS1x15[pga]))
+    if (!(pgaADS1x15.hasOwnProperty(pga)))
     {
       self.busy = false;
       callback("ADS1x15: Invalid pga specified");
@@ -536,7 +536,7 @@ ads1x15.prototype.startContinuousConversion = function(channel, pga, sps, callba
       }
     }
     // Set PGA/voltage range, defaults to +-6.144V
-    if (!(pgaADS1x15[pga]))
+    if (!(pgaADS1x15.hasOwnProperty(pga)))
     {
       self.busy = false;
       callback("ADS1x15: Invalid pga specified");
@@ -770,7 +770,7 @@ ads1x15.prototype.startSingleEndedComparator = function(channel, thresholdHigh, 
       config |= spsADS1115[sps];
     }
     // Set PGA/voltage range, defaults to +-6.144V
-    if (!(pgaADS1x15[pga]))
+    if (!(pgaADS1x15.hasOwnProperty(pga)))
     {
       self.busy = false;
       callback("ADS1x15: Invalid pga specified");
@@ -950,7 +950,7 @@ ads1x15.prototype.startDifferentialComparator = function(chP, chN, thresholdHigh
     }
 
     // Set PGA/voltage range, defaults to +-6.144V
-    if (!(pgaADS1x15[pga]))
+    if (!(pgaADS1x15.hasOwnProperty(pga)))
     {
       self.busy = false;
        callback("ADS1x15: Invalid pga specified");
